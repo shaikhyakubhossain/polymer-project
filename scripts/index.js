@@ -45,7 +45,7 @@ const leftBoxOn = () => {
   // document.getElementById("scrimID").style.zIndex = "100";
   document.getElementById("scrimID").style.visibility = "visible";
   document.getElementById("scrimID").style.opacity = "1";
-}
+};
 const leftBoxOff = () => {
   document.getElementById("leftBoxContainer").style.left = "-256px";
   document.getElementById("scrimID").style.opacity = "0";
@@ -53,5 +53,4 @@ const leftBoxOff = () => {
   setTimeout(() => {
     document.getElementById("scrimID").style.visibility = "hidden";
   }, 200);
-  
-}
+};
