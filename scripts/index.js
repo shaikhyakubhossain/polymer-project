@@ -42,15 +42,25 @@ const MENS_TSHIRT = [
 ];
 const leftBoxOn = () => {
   document.getElementById("leftBoxContainer").style.left = "0px";
-  // document.getElementById("scrimID").style.zIndex = "100";
-  document.getElementById("scrimID").style.visibility = "visible";
-  document.getElementById("scrimID").style.opacity = "1";
+  // document.getElementById("scrimId").style.zIndex = "100";
+  document.getElementById("scrimId").style.visibility = "visible";
+  document.getElementById("scrimId").style.opacity = "1";
 };
 const leftBoxOff = () => {
   document.getElementById("leftBoxContainer").style.left = "-256px";
-  document.getElementById("scrimID").style.opacity = "0";
-  // document.getElementById("scrimID").style.zIndex = "-9999";
+  document.getElementById("scrimId").style.opacity = "0";
+  // document.getElementById("scrimId").style.zIndex = "-9999";
   setTimeout(() => {
-    document.getElementById("scrimID").style.visibility = "hidden";
+    document.getElementById("scrimId").style.visibility = "hidden";
   }, 200);
+};
+const mouseWheelCheck = (event) => {
+  var Yaxis = event.deltaY;
+  if (Yaxis < 0) {
+    document.getElementById("topNav").style.position = "sticky";
+  }
+  else {
+    document.getElementById("topNav").style.position = "static";
+  }
+
 };

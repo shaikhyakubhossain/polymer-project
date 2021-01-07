@@ -14,6 +14,13 @@ ul {
   padding: 0;
 }
 
+.sml-txt {
+  color: #757575;
+  font-size: 12px;
+  width: 100%;
+  text-align: center;
+}
+
 .scrim {
   position: fixed;
   top: 0px;
@@ -121,6 +128,11 @@ a {
   margin-bottom: 40px;
 }
 
+.btn-md:active {
+  color: white;
+  background-color: black;
+}
+
 .hero-title {
   font-size: 1em;
   font-family: "Roboto", "Noto", sans-serif;
@@ -134,11 +146,12 @@ a {
   justify-content: center;
   padding: 25px 0;
   display: flex;
-  position: sticky;
-  top: 0;
+  position: static;
+  top: 0px;
   background-color: white;
   box-shadow: 0px 5px 6px -3px rgba(0, 0, 0, 0.2);
   opacity: 95%;
+  transition: position 2s, top 2s;
 }
 
 .left-box-container {
@@ -189,6 +202,7 @@ a {
   padding: 50px;
   font-size: 16px;
   font-weight: 600;
+  /* height: max-content; */
 }
 
 .main-content {
