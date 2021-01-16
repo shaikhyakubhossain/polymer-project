@@ -14,28 +14,33 @@ ul {
   padding: 0;
 }
 
-.sml-txt {
+.text-sm {
   color: #757575;
   font-size: 12px;
   width: 100%;
   text-align: center;
 }
 
-.scrim {
+h1 {
+  font-size: 24px;
+  font-weight: 500;
+  margin: 0;
+}
+
+#backdrop {
   position: fixed;
   top: 0px;
   bottom: 0px;
   left: 0px;
   right: 0px;
   background-color: rgba(0, 0, 0, 0.5);
-  /* z-index: -9999; */
   opacity: 0;
   transition: opacity 200ms;
   visibility: hidden;
-  /* transform: translateZ(0); */
+  z-index: 100;
 }
 
-.brand-label-container {
+#app-header {
   display: flex;
   width: 100%;
   height: 90px;
@@ -53,33 +58,49 @@ ul {
   text-align: center;
   margin: 0;
   letter-spacing: 0.3em;
-  padding: 30px 0;
+  padding: 23px 0;
 }
 
 .cart-link {
   width: 40px;
+  height: 40px;
   margin: 0;
   align-items: center;
-  padding: 30px 0px;
+  padding: 23px 0px;
 }
 
 .logo-sm {
+  cursor:pointer;
   width: 20px;
   height: 20px;
 }
 
-.left-box-icon {
+#main-drawer-btn {
   width: 40px;
+  height: 40px;
   margin: 0;
   align-items: center;
-  padding: 30px 0px;
+  padding: 23px 0px;
   visibility: hidden;
+}
+
+.back-btn-icon {
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  align-items: center;
+  padding: 23px 0px;
 }
 
 .item,
 .item-on-selected-page {
   width: 100%;
-  height: 320px;
+  margin-bottom: 40px;
+}
+
+.jumbotron {
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .item-img {
@@ -88,15 +109,9 @@ ul {
   object-fit: cover;
 }
 
-.item-flex-img {
-  object-fit: cover;
-  width: 100%;
-  height: 320px;
-}
 
-.mw-flex-item {
-  width: 100%;
-  height: 320px;
+.flex {
+  display: flex;
 }
 
 a {
@@ -118,14 +133,12 @@ a {
   display: block;
   font-size: 14px;
   font-weight: 500;
-  width: min-content;
   border: 2px solid black;
   text-align: center;
   padding: 8px 44px 8px 44px;
   margin: auto;
   color: black;
   background-color: rgb(255, 255, 255);
-  margin-bottom: 40px;
 }
 
 .btn-md:active {
@@ -141,24 +154,29 @@ a {
   margin: 27px 0px 27px 0px;
 }
 
-.top-nav {
+#app-nav {
   width: 100%;
+  height: 66px;
   justify-content: center;
   padding: 25px 0;
   display: flex;
-  position: static;
-  top: 0px;
+  position: sticky;
+  top: -66px;
   background-color: white;
   box-shadow: 0px 5px 6px -3px rgba(0, 0, 0, 0.2);
   opacity: 95%;
-  transition: position 2s, top 2s;
+  transition: top 150ms;
+}
+
+#app-nav a {
+  margin: 0 23px;
+  font-size: 13px;
 }
 
 .left-box-container {
-  display: none;
   z-index: 200;
   position: fixed;
-  top: opx;
+  top: 0px;
   bottom: 0px;
   left: -256px;
   width: 256px;
@@ -178,13 +196,13 @@ a {
   height: 30px;
 }
 
-.top-nav-hero-link {
-  margin: 0 23px;
-  font-size: 13px;
-}
-
-.brand-label-container {
+#app-header {
+  background: white;
+  position: sticky;
+  top: -64;
   width: 100%;
+  height: 64px;
+  transition: top 150ms;
 }
 
 .item-container {
@@ -211,11 +229,11 @@ a {
 }
 
 @media only screen and (max-width: 766px) {
-  .left-box-icon {
+  #main-drawer-btn {
     visibility: visible;
   }
 
-  .top-nav {
+  #app-nav {
     display: none;
   }
 
@@ -230,12 +248,21 @@ a {
     display: block;
   }
 }
+@media only screen and(max-width: 355px) {
+  .btn-md {
+    width: 20px;
+  }
+}
 
-.made-by-polymer {
+.link {
+  display: table;
+  margin: auto;
   font-size: 13px;
-  width: 100%;
-  text-align: center;
-  /* margin: auto 0; */
+  color: #757575;
+}
+
+.link:hover {
+  text-decoration: underline;
 }
 
 .demo-label {
@@ -243,7 +270,7 @@ a {
   width: 120px;
   display: block;
   text-align: center;
-  padding: 6px;
+  padding: 8px;
   background-color: black;
   color: white;
   margin: 8px auto 0;
@@ -254,4 +281,26 @@ a {
   margin: 0;
   font-size: 12px;
   text-align: center;
+}
+.product-detail-container {
+  display: flex;
+}
+.product {
+  margin: 64px 32px;
+  width: 50%;
+}
+
+.details {
+  margin: 64px 32px;
+}
+
+.price {
+  margin: 16px 0 40px;
+  font-size: 16px;
+  color: #757575;
+}
+
+h2 {
+  font-size: 13px;
+  margin: 16px 0;
 }

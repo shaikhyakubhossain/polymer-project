@@ -1,67 +1,79 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home&nbsp;-&nbsp;SHOP</title>
-    <link rel="stylesheet" href="styles/index.css">
-    <link rel="icon" href="/images/logos/page-icon.png">
-    <script src="scripts/index.js"></script>
-  </head>
-  <body onwheel="mouseWheelCheck(event)">
-    <div id="scrimId" class="scrim" onclick="leftBoxOff()"></div>
-    <header class="brand-label-container">
-      <a class="left-box-icon" onclick="leftBoxOn()"><img class="logo-sm" src="images/logos/menu.png"></img></a>
-      <a class="brand-label" href="index.html">SHOP</a>
-      <a class="cart-link" href="cart.html"><img class="logo-sm" src="images/logos/cart.png"></img></a>
-    </header>
-    <nav id="topNav" class="top-nav">
-        <a class="top-nav-hero-link" href="">Men's&nbsp;Outerwear</a>
-        <a class="top-nav-hero-link" href="">Ladies&nbsp;Outerwear</a>
-        <a class="top-nav-hero-link" href="mens_tshirts.html">Men's&nbsp;T-Shirts</a>
-        <a class="top-nav-hero-link" href="">Ladies&nbsp;T-Shirts</a>
-    </nav>
-    <div id="leftBoxContainer" class="left-box-container">
-      <div class="left-box-menu">
-        <ul class="left-bow-menu-list">
-           <li class="left-box-item"><a href="">Men's&nbsp;Outerwear</a></li>
-           <li class="left-box-item"><a href="#">Ladies&nbsp;Outerwear</a></li>
-           <li class="left-box-item"><a href="mens_tshirts.html">Men's&nbsp;T-Shirts</a></li>
-           <li class="left-box-item"><a href="#">Ladies&nbsp;T-Shirts</a></li>
-        </ul>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home&nbsp;-&nbsp;SHOP</title>
+  <link rel="stylesheet" href="styles/index.css" />
+  <link rel="icon" href="/images/logos/shopping-bag.png" />
+  <script src="scripts/index.js"></script>
+</head>
+
+<body>
+  <div id="backdrop"></div>
+  <aside id="left-side-drawer" class="left-box-container">
+    <div class="left-box-menu">
+      <ul class="left-bow-menu-list">
+        <li class="left-box-item"><a href="">Men's&nbsp;Outerwear</a></li>
+        <li class="left-box-item"><a href="#">Ladies&nbsp;Outerwear</a></li>
+        <li class="left-box-item"><a href="mens-tshirts.html">Men's&nbsp;T-Shirts</a></li>
+        <li class="left-box-item"><a href="#">Ladies&nbsp;T-Shirts</a></li>
+      </ul>
+    </div>
+  </aside>
+  <header id="app-header">
+    <div id="main-drawer-btn"><img class="logo-sm" src="images/logos/menu.png"></img></div>
+    <a class="brand-label" href="index.html">SHOP</a>
+    <a class="cart-link" href="#"><img class="logo-sm" src="images/logos/cart.png"></img></a>
+  </header>
+  <nav id="app-nav">
+    <a href="">Men's&nbsp;Outerwear</a>
+    <a href="">Ladies&nbsp;Outerwear</a>
+    <a href="mens-tshirts.html">Men's&nbsp;T-Shirts</a>
+    <a href="">Ladies&nbsp;T-Shirts</a>
+  </nav>
+
+  <div class="jumbotron">
+
+    <div class="main-content">
+      <div class="item">
+        <a href="#">
+          <img class="item-img" src="images/hero/mens-outerwear.jpg"></img>
+        </a>
+        <h2 class="hero-title">Men's&nbsp;Outerwear</h2>
+        <button class="btn-md">SHOP&nbsp;NOW</button>
+      </div>
+      <div class="item">
+        <a href="#">
+          <img class="item-img" src="images/hero/ladies-outerwear.jpg"></img>
+        </a>
+        <h2 class="hero-title">Ladies&nbsp;Outerwear</h2>
+        <button class="btn-md">SHOP&nbsp;NOW</button>
+      </div>
+      <div class="flex">
+        <div class="item">
+          <a href="mens-tshirts.html">
+            <img class="item-img" src="images/hero/mens-tshirts.jpg"></img>
+          </a>
+          <h2 class="hero-title">Mens&nbsp;T-Shirts</h2>
+          <button class="btn-md">SHOP&nbsp;NOW</button>
+        </div>
+        <div class="item">
+          <a href="#">
+            <img class="item-img" src="images/hero/ladies-tshirts.jpg"></img>
+          </a>
+          <h2 class="hero-title">Ladies&nbsp;T-Shirts</h2>
+          <button class="btn-md">SHOP&nbsp;NOW</button>
+        </div>
       </div>
     </div>
-    <div class="main-content">
-    <a class="item" href="#">
-        <img class="item-img" src="images/hero/mens-outerwear.jpg"></img>
-    </a>
-    <h2 class="hero-title">Mens&nbsp;Outerwear</h2>
-    <button class="btn-md" >SHOP&nbsp;NOW</button>
-    <a class="item" href="#">
-        <img class="item-img" src="images/hero/ladies-outerwear.jpg"></img>
-    </a>
-    <h2 class="hero-title">Ladies&nbsp;Outerwear</h2>
-    <button class="btn-md">SHOP&nbsp;NOW</button>
   </div>
-  <div class="main-content-flex">
-    <div class="mw-t-shirts-container">
-    <a class="mw-flex-item" href="mens_tshirts.html">
-        <img class="item-flex-img" src="images/hero/mens-tshirts.jpg"></img>
-    </a>
-    <a class="mw-flex-item" href="#">
-        <img class="item-flex-img" src="images/hero/ladies-tshirts.jpg"></img>
-    </a>
-  </div>
-  <div class="mw-hero-title-container">
-    <h2 class="hero-title">Mens&nbsp;T-Shirts</h2>
-    <h2 class="hero-title">Ladies&nbsp;T-Shirts</h2>
-    <button class="btn-md">SHOP&nbsp;NOW</button>
-    <button class="btn-md">SHOP&nbsp;NOW</button>
-  </div>
-  </div>
-    <footer>
-        <a class="made-by-polymer" href="#">Made&nbsp;by&nbsp;Polymer</a>
-       <div class="demo-label" >DEMO&nbsp;ONLY</div>
-    </footer>
-  </body>
+
+  <footer>
+    <a class="link" href="#">Made&nbsp;by&nbsp;Polymer</a>
+    <div class="demo-label">DEMO&nbsp;ONLY</div>
+  </footer>
+</body>
+
 </html>
