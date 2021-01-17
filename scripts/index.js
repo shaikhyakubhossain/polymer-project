@@ -45,14 +45,27 @@
 //   { id: "40", name: "Mountain View T-Shirt", price: "$16.50" },
 // ];
 
+const mobileBreakpoint = 766;
 var leftDrawerOpen = false;
-var screenWidth = window.innerWidth;
-console.log(screenWidth);
 
 window.onload = function () {
-  toggleLeftDrawer();
   handleWindowResize();
-  toggleAppNav();
+  handleWheelScroll();
+  toggleLeftDrawer();
+};
+
+const handleWindowResize = () => {
+  window.addEventListener("resize", () => {
+    closeLeftDrawer();
+  });
+};
+
+const handleWheelScroll = () => {
+  window.addEventListener("wheel", (e) => {
+    closeLeftDrawer();
+    toggleAppNav(e);
+    toggleAppHeader(e);
+  });
 };
 
 const toggleLeftDrawer = () => {
@@ -81,7 +94,7 @@ const toggleLeftDrawer = () => {
 };
 
 const closeLeftDrawer = () => {
-  if (window.innerWidth > 766) {
+  if (window.innerWidth > mobileBreakpoint) {
     const drawer = document.getElementById("left-side-drawer");
     const backdrop = document.getElementById("backdrop");
 
@@ -94,44 +107,28 @@ const closeLeftDrawer = () => {
   }
 };
 
-const handleWindowResize = () => {
-  window.addEventListener("resize", () => {
-    closeLeftDrawer();
-      toggleAppNav();
-      toggleappHeader();
-  });
-};
-
-const toggleAppNav = () => {
-  if (window.innerWidth > 766) {
-  document.addEventListener("wheel", (e) => {
+const toggleAppNav = (e) => {
+  if (window.innerWidth > mobileBreakpoint) {
     const Yaxis = e.deltaY;
     const appNav = document.getElementById("app-nav");
+
     if (Yaxis < 0) {
       appNav.style.top = "0px";
     } else {
       appNav.style.top = "-66px";
     }
-  });
-}
+  }
 };
 
-const toggleappHeader = () => {
-  if (window.innerWidth <= 766) {
-  document.addEventListener("wheel", (e) => {
+const toggleAppHeader = (e) => {
+  if (window.innerWidth <= mobileBreakpoint) {
     const Yaxis = e.deltaY;
     const appHeader = document.getElementById("app-header");
-    console.log(Yaxis);
-    console.log(appHeader);
-    if (Yaxis < 0 && window.innerWidth <= 766) {
-      appHeader.style.position = "sticky";
+
+    if (Yaxis < 0) {
       appHeader.style.top = "0px";
-    } else if (Yaxis > 0 && window.innerWidth <= 766) {
-      appHeader.style.position = "sticky";
+    } else if (Yaxis > 0) {
       appHeader.style.top = "-64px";
-    } else if (window.innerWidth > 766) {
-      appHeader.style.position = "static";
     }
-  });
-}
+  }
 };

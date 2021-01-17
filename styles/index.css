@@ -198,8 +198,8 @@ a {
 
 #app-header {
   background: white;
-  position: sticky;
-  top: -64;
+  position: static;
+  top: 0px;
   width: 100%;
   height: 64px;
   transition: top 150ms;
@@ -231,6 +231,11 @@ a {
 @media only screen and (max-width: 766px) {
   #main-drawer-btn {
     visibility: visible;
+  }
+
+  #app-header {
+    position:sticky;
+    top: 0px;
   }
 
   #app-nav {
